@@ -1,1 +1,17 @@
-GET http://localhost:3001/api/currency/
+POST http://localhost:3001/api/currency
+Content-Type: application/json
+
+{"currencyCode": "UAH", "country": "UKRAINE", "conversionRate": 350}
+
+###
+#GET http://localhost:3001
+
+#GET http://localhost:3001/api/currency/
+
+#GET http://localhost:3001/api/currency/0
+
+#POST http://localhost:3001/api/currency/
+
+#PUT http://localhost:3001/api/currency/1/10
+
+#DELETE http://localhost:3001/api/currency/1
