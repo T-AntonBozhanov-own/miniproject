@@ -19,7 +19,7 @@ Currency.init({
         allowNull: false,
         references: {
             model: Country,
-            key: 'id'
+            referencesKey: 'id',
         }
     },
     conversionRate: {
@@ -28,8 +28,8 @@ Currency.init({
     },
 }, { sequelize, timestamps: true, modelName: 'Currency', freezeTableName: true })
 
-Currency.sync()
+Currency.hasOne(Country, {foreignKey: 'id'})
 
-Currency.hasOne(Country)
+Currency.sync()
 
 module.exports = Currency

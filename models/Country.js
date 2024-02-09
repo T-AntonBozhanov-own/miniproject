@@ -1,5 +1,6 @@
 const { Model, DataTypes} = require("sequelize");
 const {sequelize} = require("../db");
+const Currency = require("./Currency");
 
 class Country extends Model {}
 
@@ -15,5 +16,7 @@ Country.init({
     },
 }, { sequelize, timestamps: true, modelName: 'Country', freezeTableName: true })
 
+
+Country.sync()
 
 module.exports = Country

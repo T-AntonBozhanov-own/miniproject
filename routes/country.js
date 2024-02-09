@@ -6,7 +6,7 @@ const {Op} = require("sequelize");
 
 /**
  * TODO: GET Endpoint
- * @receives a get request to the URL: http://localhost:3001/api/currency-countryName/
+ * @receives a get request to the URL: http://localhost:3001/api/country/
  * @responds with returning the data as a JSON
  */
 countryRouter.get(COUNTRY_PATH, async (request, response) => {
@@ -22,7 +22,7 @@ countryRouter.get(COUNTRY_PATH, async (request, response) => {
 
 /**
  * TODO: POST Endpoint
- * @receives a post request to the URL: http://localhost:3001/api/currency-countryName/,
+ * @receives a post request to the URL: http://localhost:3001/api/country/,
  * with data object enclosed
  * @responds by returning the newly created resource
  */
@@ -46,7 +46,7 @@ countryRouter.post(COUNTRY_PATH, async (request, response) => {
 
 /**
  * TODO: DELETE:id Endpoint
- * @receives a delete request to the URL: http://localhost:3001/api/currency/:id,
+ * @receives a delete request to the URL: http://localhost:3001/api/country/:id,
  * @responds by returning a status code of 204
  */
 countryRouter.delete(`${COUNTRY_PATH}/:id`, async (request, response) => {
