@@ -2,7 +2,7 @@ import {useCurrencyConverterHandlers} from "./useCurrencyConverterHandlers.js";
 import style from './currencyConverter.module.css'
 
 export const CurrencyConverter = () => {
-    const {data, convert, convertedAmount, handleSubmit} = useCurrencyConverterHandlers()
+    const {data, convertedAmount, handleSubmit} = useCurrencyConverterHandlers()
 
     return (
         <div className={style.container}>
