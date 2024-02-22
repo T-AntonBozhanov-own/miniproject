@@ -1,8 +1,13 @@
 const express = require('express')  // We import the express application
+const dotenv = require("dotenv").config()
 const app = express() // Creates an express application in app
 const cors = require('cors')
 const currencyRouter = require("./routes/currency");
+const countryRouter = require("./routes/country");
+const countryNameRouter = require("./routes/contryName");
 const {unknownEndpoint, logger} = require("./utils/middleware");
+const { performConnection } = require('./db')
+
 
 /**
  * Initial application setup
@@ -12,6 +17,9 @@ const {unknownEndpoint, logger} = require("./utils/middleware");
 app.use(cors())
 app.use(express.json())
 app.use(logger)
+
+//Make db connection
+performConnection()
 
 
 /**
@@ -33,6 +41,8 @@ app.get('/', (request, response) => {
   response.send('Hello World!')
 })
 app.use('/', currencyRouter)
+app.use('/', countryRouter)
+app.use('/', countryNameRouter)
 app.use(unknownEndpoint)
 
 
