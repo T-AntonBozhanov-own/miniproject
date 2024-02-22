@@ -1,1 +1,1 @@
-export {CurrencyConverter} from './CurrencyConverter.jsx'
+export {CurrencyConverter} from './CurrencyConverter.js'

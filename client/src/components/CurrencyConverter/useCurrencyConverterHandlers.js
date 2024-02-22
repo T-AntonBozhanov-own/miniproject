@@ -1,5 +1,6 @@
 import {useGetCurrencyList} from "../../services";
 import {useState} from "react";
+import {convertCurrency} from "../../utils";
 
 export const useCurrencyConverterHandlers = () => {
     const [convertedAmount, setConvertedAmount] = useState(0)
@@ -8,7 +9,7 @@ export const useCurrencyConverterHandlers = () => {
         const currencyRateFrom = data.find(el => el.id === Number(currencyIdFrom))?.conversionRate ?? 1
         const currencyRateTo = data.find(el => el.id === Number(currencyIdTo))?.conversionRate ?? 1
 
-        setConvertedAmount((currencyRateTo/currencyRateFrom) * amount)
+        setConvertedAmount(convertCurrency(currencyRateFrom, currencyRateTo, Number(amount)))
     }
     const handleSubmit = (e) => {
         e.preventDefault()
