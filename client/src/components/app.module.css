@@ -1,0 +1,10 @@
+.main_container {
+    display: flex;
+    flex-direction: column;
+
+    .divider {
+        margin: 20px 0 20px 0;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+}

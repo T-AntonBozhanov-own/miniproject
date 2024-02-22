@@ -19,7 +19,7 @@ Currency.init({
         allowNull: false,
         references: {
             model: Country,
-            key: 'id'
+            referencesKey: 'id',
         }
     },
     conversionRate: {

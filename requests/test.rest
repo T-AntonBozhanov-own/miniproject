@@ -1,12 +1,14 @@
 POST http://localhost:3001/api/currency
 Content-Type: application/json
 
-{"currencyCode": "UAH", "countryId": 3, "conversionRate": 28}
+{"currencyCode": "EUR", "countryId": 4, "conversionRate": 0.69}
 
 ###
 #GET http://localhost:3001
 
 #GET http://localhost:3001/api/currency/
+
+#GET http://localhost:3001/api/country/
 
 #GET http://localhost:3001/api/currency/0
 
@@ -14,9 +16,12 @@ Content-Type: application/json
 
 #PUT http://localhost:3001/api/currency/1/0.78
 
-#DELETE http://localhost:3001/api/currency/2
+DELETE http://localhost:3001/api/currency/5
 
-GET http://localhost:3001/api/currency-countryName
+#GET http://localhost:3001/api/currency-countryName
 
-#GET http://localhost:3001/api/country
+POST http://localhost:3001/api/country
+Content-Type: application/json
+
+{"name":  "Germany"}
 
