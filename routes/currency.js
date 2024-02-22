@@ -1,7 +1,7 @@
 const {CURRENCIES_PATH} = require("./constants");
 const {HTTP_CODE} = require("../constants/httpCodes");
 const currencyRouter = require('express').Router()
-const Currency = require( '../models/Currency')
+const Currency = process.env.NODE_ENV === 'test' ? require( '../models/TestCurrency') : require( '../models/Currency')
 const {Op} = require("sequelize");
 
 /**
@@ -54,16 +54,13 @@ currencyRouter.post(CURRENCIES_PATH, async (request, response) => {
     try {
         const content = request.body
 
-        if (!content.currencyCode || !content.countryId || !content.conversionRate) {
+        if (!content.currencyCode || !content.conversionRate) {
             return response.status(HTTP_CODE.BAD_REQUEST).send({ error: 'content missing'})
         }
 
         // Make changes in currency db
         const createdCurrency = await Currency.create({
-            currencyCode: content.currencyCode,
-            countryId: content.countryId,
-            conversionRate: content.conversionRate
-    })
+            ...content})
         response.json(createdCurrency)
     } catch (e) {
         response.status(HTTP_CODE.INTERNAL_SERVER_ERROR).send({ error: 'content missing' })
@@ -90,6 +87,7 @@ currencyRouter.put(`${CURRENCIES_PATH}/:id/:newRate`, async (request, response) 
                 }
             }
         });
+
 
         const modifiedCurrency = await Currency.findAll({
             where: {

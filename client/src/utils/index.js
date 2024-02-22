@@ -1,1 +1,2 @@
-export {fetcher} from './fetcher.js'
+export {fetcher} from './fetcher'
+export {convertCurrency} from './currency_utils'
