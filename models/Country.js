@@ -15,5 +15,6 @@ Country.init({
     },
 }, { sequelize, timestamps: true, modelName: 'Country', freezeTableName: true })
 
+Country.sync()
 
 module.exports = Country
