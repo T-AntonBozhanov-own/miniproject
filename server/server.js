@@ -15,7 +15,8 @@ const { performConnection } = require('./db')
  */
 app.use(cors())
 app.use(express.json())
-app.use(express.static('dist'))
+// allow express use front end build
+// app.use(express.static('dist'))
 app.use(logger)
 
 //Make db connection
