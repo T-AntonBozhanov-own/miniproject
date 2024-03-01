@@ -3,7 +3,7 @@ import {HTTP_METHODS} from "../constants";
 export const fetcher = async (url, method = HTTP_METHODS.GET, body) => {
     let result
     try {
-        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/${url}`, {
+        const response = await fetch(`/api/${url}`, {
             method,
             body,
             headers: {

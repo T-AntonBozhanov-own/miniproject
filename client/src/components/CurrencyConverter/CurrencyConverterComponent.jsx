@@ -5,11 +5,11 @@ export const CurrencyConverterComponent = ({data, convertedAmount, handleSubmit}
         <form className={style.form}  onSubmit={handleSubmit}>
             <label htmlFor="currenciesFrom">From</label>
             <select name='currenciesFrom' id="currenciesFrom">
-                {data.map((item) => <option key={item?.id} value={item?.id}>{item?.currencyCode}</option>)}
+                {data?.map((item) => <option key={item?.id} value={item?.id}>{item?.currencyCode}</option>) ?? []}
             </select>
             <label htmlFor="currenciesTo">To</label>
             <select name='currenciesTo' id='currenciesTo'>
-                {data.map((item) => <option key={item?.id} value={item?.id}>{item?.currencyCode}</option>)}
+                {data?.map((item) => <option key={item?.id} value={item?.id}>{item?.currencyCode}</option>) ?? []}
             </select>
             <label htmlFor="currencyAmount">Amount</label>
             <input name='currencyAmount' id="currencyAmount" placeholder='Amount'/>
