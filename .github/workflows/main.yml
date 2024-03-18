@@ -31,9 +31,6 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
 
-      - name: deploy server    
-        run: curl ${{ secrets.SERVER_DEPLOYMENT_HOOK }}
-
       - name: installing client dependecies
         run: yarn
         working-directory: ./client
@@ -45,6 +42,3 @@ jobs:
       - name: build client code
         run: yarn build
         working-directory: ./client
-
-      - name: deploy client
-        run: curl ${{ secrets.CLIENT_DEPLOYMENT_HOOK }}
