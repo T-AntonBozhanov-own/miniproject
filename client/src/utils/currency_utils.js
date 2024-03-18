@@ -5,5 +5,5 @@
  */
 
 export const convertCurrency = (rateFrom, rateTo, amount) =>
-    Number(Number((rateFrom/rateTo) * amount).toFixed(2))
+    Number(Number((rateTo/rateFrom) * amount).toFixed(2))
 

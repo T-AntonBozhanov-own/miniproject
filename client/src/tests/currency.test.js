@@ -37,7 +37,7 @@ test('same currency conversion', () => {
  * Hint: the result should be $58 GBP according to our provided currencies.
  */
 test('CDN to GBP conversion', () => {
-  const result = convertCurrency(cdnCurrencyConversionRate, gbpCurrencyConversionRat, 100)
+  const result = convertCurrency(gbpCurrencyConversionRat, cdnCurrencyConversionRate, 100)
   expect(result).toBe(58.14)
 })
 
@@ -46,7 +46,7 @@ test('CDN to GBP conversion', () => {
  * Write a test that performs a currency conversion from CDN to USD, for $75 CDN
  */
 test('CDN to USD conversion', () => {
-  const result = convertCurrency(cdnCurrencyConversionRate, usdCurrencyConversionRate, 75)
+  const result = convertCurrency(usdCurrencyConversionRate, cdnCurrencyConversionRate, 75)
   expect(result).toBe(56.39)
 })
 
@@ -55,7 +55,7 @@ test('CDN to USD conversion', () => {
  * Write a test that performs a currency conversion from USD to GBP, for $200 USD
  */
 test('USD to CDN conversion', () => {
-  const result = convertCurrency(usdCurrencyConversionRate, gbpCurrencyConversionRat, 200)
+  const result = convertCurrency(gbpCurrencyConversionRat, usdCurrencyConversionRate, 200)
   expect(result).toBe(154.65)
 })
 
@@ -64,6 +64,6 @@ test('USD to CDN conversion', () => {
  * Write a test that performs a currency conversion from GBP to CDN, for $50 GBP
  */
 test('CDN to USD conversion', () => {
-  const result = convertCurrency(gbpCurrencyConversionRat, cdnCurrencyConversionRate, 50)
+  const result = convertCurrency(cdnCurrencyConversionRate, gbpCurrencyConversionRat, 50)
   expect(result).toBe(86)
 })
